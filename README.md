@@ -167,3 +167,27 @@ kubectl get pod
 ![images](images/Screenshot%202023-04-25%20at%208.28.16%20pm.png)
 
 ![images](images/Screenshot%202023-04-25%20at%208.29.50%20pm.png)
+
+###### Step 9- Configure Alert manager
+
+#Create a secret.yaml for alert-manager-config.yaml to login gmail account
+
+```
+kubectl apply -f email-secret.yaml
+```
+
+#Create the alert-manager-config.yaml
+
+```
+kubectl apply -f alert-manager-config.yaml
+```
+
+#Check the alert-manager
+
+```
+kubectl get alertmanagerconfig -n monitoring
+```
+
+![images](images/Screenshot%202023-04-26%20at%2010.59.35%20am.png)
+#Test the email notification via Test cpu stress pod
+![images](images/Screenshot%202023-04-26%20at%2012.33.08%20pm.png)
